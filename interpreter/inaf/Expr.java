@@ -3,12 +3,14 @@ package inaf;
 import static inaf.TokenType.*;
 
 import java.util.List;
+import java.util.Collection;
 
 abstract class Expr {
 	interface Visitor<R> {
 		R visitNumberNode(NumberNode expr);
 		R visitStringNode(StringNode expr);
 		R visitLiteralNode(LiteralNode expr);
+		R visitListNode(ListNode expr);
 		R visitAssignNode(AssignNode expr);
 		R visitAccessNode(AccessNode expr);
 		R visitBinaryOpNode(BinaryOpNode expr);
@@ -85,6 +87,23 @@ abstract class Expr {
 			return visitor.visitLiteralNode(this);
 		}
 
+  	}
+
+  	static class ListNode extends Expr {
+  		final Collection<E> elementsNode;
+  		final Position start;
+  		final Position end;
+
+  		ListNode(Collection<E> elementsNode, Position start, Position end) {
+  			this.elementsNode = elementsNode;
+  			this.start = start;
+  			this.end = end;
+  		}
+
+  		@Override
+  		<R> R accept(Visitor<R> visitor) {
+  			return visitor.visitListNode(this);
+  		}
   	}
 
 	static class AssignNode extends Expr {
