@@ -222,4 +222,32 @@ abstract class Expr {
 			return visitor.visitGetNode(this);
 		}
 	}
+
+	static class ThisNode extends Expr {
+		final Token keyword;
+
+		ThisNode(Token keyword) {
+			this.keyword = keyword;
+		}
+
+		@Override
+		<R> R accept(Visitor<R> visitor) {
+			return visitor.visitThisNode(this);
+		}	
+	}
+
+	static class SuperNode extends Expr {
+		final Token keyword;
+		final Token method;
+
+		SuperNode(Token keyword, Token method) {
+			this.keyword = keyword;
+			this.method = method
+		}
+
+		@Override
+		<R> R accept(Visitor<R> visitor) {
+			return visitor.visitSuperNode(this);
+		}	
+	}
 }
