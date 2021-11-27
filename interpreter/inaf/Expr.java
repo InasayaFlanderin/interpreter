@@ -15,6 +15,8 @@ abstract class Expr {
 		R visitUnaryOpNode(UnaryOpNode expr);
 		R visitCallNode(CallNode expr);
 		R visitGetNode(GetNode expr);
+		R visitThisNode(ThisNode expr);
+		R visitSuperNode(SuperNode expr);
 	}
 
 	abstract <R> R accept(Visitor<R> visitor);
