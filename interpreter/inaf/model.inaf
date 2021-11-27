@@ -1,0 +1,113 @@
+package packagename;
+
+import packagename.filename; 
+
+//this help management file better for a project which can had multiple file or structure has same name
+
+string str = "this is a string";
+num number = 123;
+
+var vari1 = "string"
+var vari2 = 12234;
+var vari3 = true/false;
+
+boolean boo = true/false;
+
+const a = 24; // const cant be change , use like var
+
+//normal assign
+
+print(str); // print out 'this is a string' to console
+input(/*string here*/) // take the input after of string
+
+// i/o
+
+method methodname(list of argument) {
+	//code block
+}
+
+class classname (list of sup class) {
+	init constructorname(list of argument name) {
+		//code block
+	}
+
+	// init keyword for constructor can only be use in a class
+
+	method methodname(list of argument name) {
+		//code block
+	}
+
+	method methodname(list of argumentname with type of argument) {
+		//code block
+	}
+
+	@Override
+	method methodname(list of argumentname can be with type of argument) {
+		//code block
+
+		// change inside code
+	}
+}
+
+private class cant be access outside file
+private method, private init cant be access outside class
+
+enum {
+	list of enum
+}
+
+abstract / interface (use for OOP) , like java
+
+super(list of argument) call the first constructure of class in the first the list of sup class
+this work like java
+
+//////////////////////////////////////////////////////////////////////////////
+
+method power(num a , num b) {
+	num result = a;
+
+	for(num i = 0; i < b; i++) {
+		result *= a;
+	}
+
+	return result;
+}
+
+plot(power); // show out the func graph
+
+method multiply(a , b) {
+	return a * b;
+}
+
+plot(multiply); // only graph for number
+
+/////////////////////////////////////////////////////////////////////////////
+
+var[] = {123, "a", true}; list of var
+same for other type
+
+list work same as python
+///////////////////////////////////////////////////////////////////////////
+
+if, else if, else work same as python ( can be end with else if )
+
+while, switch case, for work same as java
+
+do (condition) {
+	// code block
+}
+
+exec the codeblock first, then if condition still true , exec the code block again. if no condition, only exec code block one
+
+nameOfvalue type (type) return if the value in the type :
+
+string str = "a";
+num number = 123;
+
+str type string // return true;
+num type string // return false;
+num type var // return true;
+
+///////////////////////////////////////////////////////////////////////////////
+
+GUI work, add more later
